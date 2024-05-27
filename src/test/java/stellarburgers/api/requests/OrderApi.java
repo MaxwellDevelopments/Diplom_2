@@ -1,6 +1,7 @@
 package stellarburgers.api.requests;
 
 import io.qameta.allure.Step;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import stellarburgers.api.checkers.Checkers;
@@ -37,12 +38,13 @@ public class OrderApi extends BaseTest {
         return UtilMethods.getPrettyResponseMaker(requestDescription);
     }
 
+    @Step("GET /api/ingredients. Getting available ingredients")
     public static Response getIngredientsData() {
-        Response response = given().get(INGREDIENTS_ENDPOINT);
+        Response response = given().filter(new AllureRestAssured()).get(INGREDIENTS_ENDPOINT);
         return new ResponseWithToString(response, getIngredientsInfoResponseMaker());
     }
 
-    @Step("Making an order")
+    @Step("POST /api/orders. Making an order.")
     public static Response makeOrder(Ingredients ingredients, String accessToken) {
         RequestSpecification requestWithHeaders = UtilMethods.makeHeadersForResponse(accessToken);
 
@@ -54,11 +56,11 @@ public class OrderApi extends BaseTest {
         return new ResponseWithToString(response, getMakeOrderResponseMaker());
     }
 
-    @Step("Getting user's orders")
+    @Step("GET /api/orders. Getting an order")
     public static Response getUserOrders(String accessToken) {
         RequestSpecification requestWithHeaders = UtilMethods.makeHeadersForResponse(accessToken);
         Response response = requestWithHeaders.get(GET_ORDERS_ENDPOINT);
-        return new ResponseWithToString(response, getMakeOrderResponseMaker());
+        return new ResponseWithToString(response, getUserOrdersResponseMaker());
     }
 
     @Step("Get total amount of available ingredients")

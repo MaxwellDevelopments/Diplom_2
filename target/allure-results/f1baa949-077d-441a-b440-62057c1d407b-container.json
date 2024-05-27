@@ -1,0 +1,1 @@
+{"uuid":"f1baa949-077d-441a-b440-62057c1d407b","name":"POST /api/auth/login. Negative test, trying login with existed user and wrong password.","children":["0d7b2a25-4cca-48d3-8e60-37dda37842f9"],"befores":[],"afters":[],"start":1716817753717,"stop":1716817755244}

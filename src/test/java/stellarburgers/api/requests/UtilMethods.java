@@ -1,6 +1,7 @@
 package stellarburgers.api.requests;
 
 import io.qameta.allure.Step;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import stellarburgers.api.checkers.Checkers;
@@ -25,7 +26,7 @@ public class UtilMethods {
         else {
             requestWithHeaders = given().header("Content-type", "application/json");
         }
-        return requestWithHeaders;
+        return requestWithHeaders.filter(new AllureRestAssured());
     }
 
     protected static ResponseStringMaker getPrettyResponseMaker(String requestDescription) {

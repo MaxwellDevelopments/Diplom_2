@@ -1,6 +1,7 @@
 package stellarburgers.api.requests;
 
 import io.qameta.allure.Step;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import stellarburgers.api.responses.ResponseStringMaker;
@@ -41,8 +42,9 @@ public class UserApi {
 
     @Step("POST /api/auth/register. Creating a user.")
     public static Response createUser(stellarburgers.pojo.User user) {
-        Response response = given().
-                                header("Content-type", "application/json")
+        Response response = given()
+                                .filter(new AllureRestAssured())
+                                .header("Content-type", "application/json")
                                 .and()
                                 .body(user)
                                 .when()
@@ -54,8 +56,9 @@ public class UserApi {
 
     @Step("DELETE /api/auth/user. Deleting a user.")
     public static Response deleteUser(String accessToken) {
-        Response response = given().
-                                header("Authorization", accessToken)
+        Response response = given()
+                                .filter(new AllureRestAssured())
+                                .header("Authorization", accessToken)
                                 .when()
                                 .delete(DELETE_USER_ENDPOINT);
 
@@ -65,6 +68,7 @@ public class UserApi {
     @Step("POST /api/auth/login. Login a user.")
     public static Response loginUser(User user) {
         Response response = given()
+                                .filter(new AllureRestAssured())
                                 .header("Content-type", "application/json")
                                 .and()
                                 .body(user)
