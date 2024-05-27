@@ -1,0 +1,1 @@
+{"uuid":"40ef3bd9-9078-47e6-ab72-bf095a8191a1","name":"POST /api/auth/register should not create user. Negative test trying create user with same email.","children":["cd2d89ca-d64d-4f3b-bafe-9e94678c0033"],"befores":[],"afters":[],"start":1716815213240,"stop":1716815214643}
