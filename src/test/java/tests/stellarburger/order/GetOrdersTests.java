@@ -23,7 +23,7 @@ import static org.hamcrest.Matchers.hasSize;
 @Epic("Tests for getting specific user orders functionality")
 class GetOrdersTests extends BaseTest {
 
-    static String ACCESS_TOKEN_VALUE;
+    static String accessTokenValue;
     static User user = FakerUtils.getFakeUser();
 
     @BeforeAll
@@ -31,7 +31,7 @@ class GetOrdersTests extends BaseTest {
         user = FakerUtils.getFakeUser();
 
         Response responseRegister = Precondition.User.register(user);
-        ACCESS_TOKEN_VALUE = UtilMethods.getBearerTokenFromRegisterResponse(responseRegister);
+        accessTokenValue = UtilMethods.getBearerTokenFromRegisterResponse(responseRegister);
     }
 
     @Test
@@ -57,7 +57,7 @@ class GetOrdersTests extends BaseTest {
 
         setUpForTakingOrdersWithToken(total);
 
-        Response responseGetOrders = OrderApi.getUserOrders(ACCESS_TOKEN_VALUE);
+        Response responseGetOrders = OrderApi.getUserOrders(accessTokenValue);
 
         Checkers.check200Success(responseGetOrders);
 
@@ -81,12 +81,12 @@ class GetOrdersTests extends BaseTest {
 
     @Step("Making order for user")
     private void makeOrder(Ingredients ingredients) {
-        Response responseMakeOrder = OrderApi.makeOrder(ingredients, ACCESS_TOKEN_VALUE);
+        Response responseMakeOrder = OrderApi.makeOrder(ingredients, accessTokenValue);
         Checkers.check200Success(responseMakeOrder);
     }
 
     @AfterAll
     static void deleteUser() {
-        Postcondition.User.delete(ACCESS_TOKEN_VALUE);
+        Postcondition.User.delete(accessTokenValue);
     }
 }
