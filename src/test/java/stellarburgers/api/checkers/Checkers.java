@@ -53,7 +53,7 @@ public class Checkers {
         checkTStatus(response, 500);
     }
 
-    public static void checkTStatus(Response response, int statusCode) {
+    private static void checkTStatus(Response response, int statusCode) {
         response.then().assertThat().statusCode(statusCode);
     }
 
