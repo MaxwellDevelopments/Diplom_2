@@ -4,9 +4,6 @@ import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.hamcrest.Matcher;
 
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
-
 public class Checkers {
 
     @Step("Check json parameter in response")
