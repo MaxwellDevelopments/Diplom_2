@@ -58,17 +58,4 @@ public class Precondition {
         }
 
     }
-
-//    public static class Order {
-//        private Order() {
-//
-//        }
-//
-//        @Step("Precondition: create order")
-//        public static Response create(ru.qa.scooter.business.pojo.order.Order order) {
-//            Response response = OrderApi.makeOrder(order);
-//            Checkers.check201Created(response);
-//            return response;
-//        }
-//    }
 }
