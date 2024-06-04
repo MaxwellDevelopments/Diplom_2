@@ -13,18 +13,20 @@ public class Ingredient {
     String calories;
     String price;
     String image;
-    String image_mobile;
-    String image_large;
+    @SerializedName("image_mobile")
+    String imageMobile;
+    @SerializedName("image_large")
+    String imageLarge;
     @SerializedName("__v")
     String v;
 
     public Ingredient() {
     }
 
-    public Ingredient(String _id, String name, String type, String proteins,
+    public Ingredient(String id, String name, String type, String proteins,
                       String fat, String carbohydrates, String calories, String price,
-                      String image, String image_mobile, String image_large, String __v) {
-        this.id = _id;
+                      String image, String imageMobile, String imageLarge, String v) {
+        this.id = id;
         this.name = name;
         this.type = type;
         this.proteins = proteins;
@@ -33,9 +35,9 @@ public class Ingredient {
         this.calories = calories;
         this.price = price;
         this.image = image;
-        this.image_mobile = image_mobile;
-        this.image_large = image_large;
-        this.v = __v;
+        this.imageMobile = imageMobile;
+        this.imageLarge = imageLarge;
+        this.v = v;
     }
 
     public String getId() {
@@ -110,20 +112,20 @@ public class Ingredient {
         this.image = image;
     }
 
-    public String getImage_mobile() {
-        return image_mobile;
+    public String getImageMobile() {
+        return imageMobile;
     }
 
-    public void setImage_mobile(String image_mobile) {
-        this.image_mobile = image_mobile;
+    public void setImageMobile(String imageMobile) {
+        this.imageMobile = imageMobile;
     }
 
-    public String getImage_large() {
-        return image_large;
+    public String getImageLarge() {
+        return imageLarge;
     }
 
-    public void setImage_large(String image_large) {
-        this.image_large = image_large;
+    public void setImageLarge(String imageLarge) {
+        this.imageLarge = imageLarge;
     }
 
     public String getV() {
