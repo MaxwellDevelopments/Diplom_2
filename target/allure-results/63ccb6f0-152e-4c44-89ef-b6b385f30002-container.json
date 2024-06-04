@@ -1,0 +1,1 @@
+{"uuid":"63ccb6f0-152e-4c44-89ef-b6b385f30002","name":"PATCH /api/auth/user should change user info. Negative test, unauthorized user","children":["884a8c0b-b89c-4215-949c-83a07dd953c4"],"befores":[],"afters":[],"start":1716817742421,"stop":1716817744524}

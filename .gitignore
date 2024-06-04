@@ -24,3 +24,5 @@ hs_err_pid*
 replay_pid*
 .idea/
 Diplom_2.iml
+.allure/
+target/

@@ -1,0 +1,1 @@
+{"uuid":"c0fdbbcb-6ebc-49fa-aa58-94b0a481552c","name":"POST /api/auth/register should not create user. Negative test, trying create user with missed parameter in json.","children":["36d77e58-3b8e-4ca0-b0fa-1bc7af477eeb","44723125-d3d9-4953-bf79-6764dcd344c6","69de0206-d01d-4aa9-b628-3f0db6fe8978"],"befores":[],"afters":[],"start":1716817757213,"stop":1716817758295}

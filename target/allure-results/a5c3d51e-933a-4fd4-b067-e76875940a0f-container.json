@@ -1,0 +1,1 @@
+{"uuid":"a5c3d51e-933a-4fd4-b067-e76875940a0f","name":"POST /api/auth/register should create user. Positive test.","children":["30460d9d-79f2-4e44-a829-75a582c6d73c"],"befores":[],"afters":[],"start":1716817758296,"stop":1716817759514}
